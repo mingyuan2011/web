@@ -25,6 +25,21 @@
 	</filter-mapping>
 	
 	<servlet>
+	    <servlet-name>jerseyServlet</servlet-name>
+	    <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+	    <init-param>
+	        <param-name>com.sun.jersey.config.property.packages</param-name>
+	        <param-value>mingyuan2011.webapp.ws</param-value>
+	    </init-param>
+	    <load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+	    <servlet-name>jerseyServlet</servlet-name>
+	    <url-pattern>/rest/*</url-pattern>
+	</servlet-mapping>
+		
+	<servlet>
 	    <servlet-name>myServlet</servlet-name>
 	    <servlet-class>mingyuan2011.webapp.servlet.MyServlet</servlet-class>
 	    <load-on-startup>1</load-on-startup>
