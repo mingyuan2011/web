@@ -26,7 +26,7 @@
 	
 	<servlet>
 	    <servlet-name>jerseyServlet</servlet-name>
-	    <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+	    <servlet-class>com.sun.jersey.spi.spring.container.servlet.SpringServlet</servlet-class>
 	    <init-param>
 	        <param-name>com.sun.jersey.config.property.packages</param-name>
 	        <param-value>mingyuan2011.webapp.ws</param-value>
@@ -49,6 +49,12 @@
 	    <servlet-name>myServlet</servlet-name>
 	    <url-pattern>/servlet/myServlet</url-pattern>
 	</servlet-mapping>
+	
+	<!-- Spring 监听器， 加载Spring框架 -->
+	<listener>
+	    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
 	
 	<welcome-file-list>
 	    <welcome-file>index.jsp</welcome-file>
